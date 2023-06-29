@@ -17,6 +17,56 @@ def find_eigenvalues(matrix):
     # Calculate the ith eigenvalue
     eigvalue = np.linalg.eigvals(matrix[0:i, 0:i])[0]
 
+Let's take this a step further. 
+Say, I want to possibly train a dataset for mission critical systems for stability using eigenvalues. Here are the steps involved:
+
+* Import the necessary libraries, such as NumPy and SciPy.
+* Generate a dataset of matrices that represent the dynamics of the mission critical system.
+* Calculate the eigenvalues of each matrix.
+* Use the eigenvalues to train a machine learning model, such as a support vector machine or a neural network.
+* Use the trained model to predict the stability of new matrices.
+
+
+import numpy as np
+from scipy.linalg import eigvals
+
+# Generate a dataset of 100 matrices
+matrices = np.random.rand(100, 100)
+
+# Calculate the eigenvalues of each matrix
+eigenvalues = eigvals(matrices)
+
+# Train a support vector machine model on the eigenvalues
+model = svm.SVC()
+model.fit(eigenvalues, np.zeros(100))
+
+# Predict the stability of a new matrix
+new_matrix = np.random.rand(100, 100)
+eigenvalues = eigvals(new_matrix)
+stability = model.predict(eigenvalues)
+
+
+import numpy as np
+from scipy.linalg import eigvals
+
+# Generate a dataset of 100 matrices
+matrices = np.random.rand(100, 100)
+
+# Calculate the eigenvalues of each matrix
+eigenvalues = eigvals(matrices)
+
+# Train a support vector machine model on the eigenvalues
+model = svm.SVC()
+model.fit(eigenvalues, np.zeros(100))
+
+# Predict the stability of a new matrix
+new_matrix = np.random.rand(100, 100)
+eigenvalues = eigvals(new_matrix)
+stability = model.predict(eigenvalues)
+
+
+
+
     # Add the eigenvalue to the list
     eigenvalues.append(eigvalue)
 
